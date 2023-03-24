@@ -16,8 +16,8 @@ on:
   
 jobs:
   lint:
-    # runs-on: windows-latest
-    runs-on: ubuntu-20.04
+    runs-on: windows-latest
+    # runs-on: ubuntu-20.04
     # 決定job會執行哪些步驟
     steps:
       - uses: actions/@checkout@v2
