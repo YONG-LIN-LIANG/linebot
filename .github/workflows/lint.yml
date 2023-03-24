@@ -2,11 +2,11 @@ name: Lint Go Code
 
 on:
   # 這個 push 組合定義每次 push 到 main 分支會觸發這個pipeline
-  # push: 
-  #   branches: [main]
-  # 這個 pull_request 組合是當對 main 分支發起 pull_request 請求時，執行這個 pipeline
-  pull_request:
+  push: 
     branches: [main]
+  # 這個 pull_request 組合是當對 main 分支發起 pull_request 請求時，執行這個 pipeline
+  # pull_request:
+  #   branches: [main]
   # 排程觸發
   # schedule:
   #   - cron: '0 */8 * * *'
