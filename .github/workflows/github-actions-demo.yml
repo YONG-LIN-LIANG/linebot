@@ -1,41 +1,13 @@
-# name: Lint Go Code
 
-# on:
-#   # 這個 push 組合定義每次 push 到 main 分支會觸發這個pipeline
-#   push: 
-#     branches: [feature_lint]
-#   # 這個 pull_request 組合是當對 main 分支發起 pull_request 請求時，執行這個 pipeline
-#   # pull_request:
-#   #   branches: [main]
-#   # 排程觸發
-#   # schedule:
-#   #   - cron: '0 */8 * * *'
-#   # 上面三者擇其一，手動觸發看自己需求搭配上面任何一種
-#   # 可以手動觸發
-#   workflow_dispatch:
-  
-# jobs:
-#   lint:
-#     # runs-on: windows-latest
-#     runs-on: ubuntu-20.04
-#     # 決定job會執行哪些步驟
-#     steps:
-#       - uses: actions/@checkout@v2
-#       - uses: actions/setup-go@v2
-#         with:
-#           stable: 'false'
-#           go-version: '1.19'
-#       - name: lint
-#         run: |
-#           curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.26.0
-
-#           golangci-lint run
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 # on: [push]
-pull_request:
-    branches: [main]
-workflow_dispatch:
+on: 
+  pull_request:
+    branches:
+      - main
+  # workflow_dispatch:
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
